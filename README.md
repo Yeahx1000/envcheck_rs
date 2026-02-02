@@ -1,6 +1,6 @@
-# Envcheck - Check the Environment Variables of a Project
+# Envcheck
 
-A tool to check the environment variables of a project.
+A tool to check the environment variables of a project. It is a simple tool that checks if the environment variables are set correctly. Mostly used as an excercise.
 
 ## Usage
 
