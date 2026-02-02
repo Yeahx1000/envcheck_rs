@@ -22,7 +22,7 @@ pub struct ParsedEnvFile {
 
 pub fn parse_env_file(path: &Path) -> AppResult<ParsedEnvFile> {
     let content = fs::read_to_string(path)?;
-    let mut values: Hashmap<String, String> = HashMap::new();
+    let mut values: HashMap<String, String> = HashMap::new();
     let mut duplicates: Vec<String> = Vec::new();
 
     for (index, raw_line) in content.lines().enumerate() {
@@ -80,7 +80,7 @@ pub fn parse_env_file(path: &Path) -> AppResult<ParsedEnvFile> {
     Ok(ParsedEnvFile { values, duplicates })
 }
 
-pub fn parse_req_keys(path: Path) -> AppResult<Vec<String>> {
+pub fn parse_req_keys(path: &Path) -> AppResult<Vec<String>> {
     let parsed = parse_env_file(path)?;
     let mut keys: Vec<String> = parsed.values.keys().cloned().collect();
     keys.sort();

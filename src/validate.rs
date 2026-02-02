@@ -26,7 +26,7 @@ pub fn validate_env_file(env: &ParsedEnvFile, required: &[String]) -> Validation
 
     for (key, value) in &env.values {
         if value.trim().is_empty() {
-            report.empty.push(key.to_clone());
+            report.empty.push(key.clone());
         }
     }
 
